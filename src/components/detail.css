@@ -1,0 +1,43 @@
+.full{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.full .img img{
+    margin: 20px;
+    border-radius: 20px;
+    height: auto;
+    width: 35vh;
+}
+.buttons{
+    margin: 20px;
+}
+.buttons .buy{
+    background-color:blueviolet;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    border-radius:5px;
+}
+.buttons .read{
+    background-color:rgb(46, 233, 233);
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    padding: 15px;
+    margin: 15px;
+    border-radius:5px;
+}
+.buttons .read:hover{
+    box-shadow: 0px 0px 5px #000;
+}
+.buttons .buy:hover{
+    box-shadow: 0px 0px 5px #000;
+}
+.desc{
+    margin-top: 20px;
+}
+.lang{
+    text-transform: uppercase;
+}

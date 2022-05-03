@@ -1,0 +1,37 @@
+.main{
+    background-color: #eee;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+}
+.main:hover{
+
+}
+.main .img img{
+    margin: 10px;
+    border-radius: 10px;
+}
+.main .desc{
+    left: 0;
+    margin: 10px;
+}
+.main .desc .authors{
+    display: flex;
+}
+.main .desc p{
+   margin: 5px;
+} 
+select{
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    opacity: 0.5;
+}
+.more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
