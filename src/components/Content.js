@@ -9,7 +9,7 @@ export default function Content() {
   const dispatch = useDispatch()
   const [book, setBook] = useState('book');
   const [key, setKey] = useState('AIzaSyDGorCvZLJs9nlvFBWbtZtlXdbq6fOSyh0');
-  const [maxR, setMaxR] = useState(10);
+  const [maxR, setMaxR] = useState(30);
   const [mydata, setData] = useState([]);
   const [categ, setCateg] = useState("All");
   const [order, setOrder] = useState("relevance");
@@ -23,7 +23,6 @@ export default function Content() {
     try{
         const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book && (book)}subject=${categ}&key=${key}&maxResults=${maxR}&orderBy=${order}`)
         dispatch(setProduct(res.data))
-        console.log(res)
     }catch(e){
       console.log(e)
     }
@@ -32,18 +31,10 @@ export default function Content() {
     Handler()
   })
 
-  function Optioned(e){
-    setCateg(e.target.value);
-  }
-  function Ordered(e){
-    setOrder(e.target.value)
-  }
-  console.log(order)
-
   return (
     <>
         <form>
-            <select onChange={Optioned} id='category'>
+            <select onChange={(e)=>setCateg(e.target.value)} id='category'>
               <option disabled value="">Category</option>
               <option value="all">All</option>
               <option value="Architecture and the physically handicapped">Architecture</option>
@@ -53,11 +44,17 @@ export default function Content() {
               <option value="medical">Medical</option>
               <option value="poetry">Poetry</option>
             </select>
-            <select onChange={Ordered} id='category'>
+            <select onChange={(e)=>setOrder(e.target.value)} id='category'>
               <option value="relevance">Relevance</option>
               <option value="newest">Newest</option>
             </select>
             <input onChange={HandlerChange} className='search form-control w-30' type="text" placeholder='search'/>
+            <select onChange={(e)=>setMaxR(e.target.value)} id='category'>
+              <option value="30">30</option>
+              <option value="20">20</option>
+              <option value="15">15</option>
+              <option value="10">10</option>
+            </select>
             <button onClick={Handler} className='btn btn-primary' type='submit'>search</button>
         </form>
         <div className="content ">

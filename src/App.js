@@ -1,5 +1,5 @@
 import './App.css';
-import {React, useState} from 'react';
+import React from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -8,21 +8,18 @@ import {
 import Detail from './components/Detail';
 import Content from './components/Content';
 
-function App() {
+const App = () => {
   
-  return (
-    <div className="App">
-     
+  return(
+    <div className='App'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Content />} />
           <Route path="/detail" element={<Detail />} />
         </Routes>
       </BrowserRouter>
-      
-      
     </div>
-  );
+  )
 }
 
 export default App;
